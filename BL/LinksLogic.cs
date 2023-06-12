@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -11,7 +12,7 @@ namespace Speedtools.BL
 {
     public class LinksLogic
     {
-        public string raw;
+        public string raw = string.Empty;
         public string baseLink = string.Empty;
         public string filePath = string.Empty;
         public string dateFormat = string.Empty;
@@ -22,7 +23,18 @@ namespace Speedtools.BL
         {
             try
             {
-                string csv = System.IO.File.ReadAllText(filePath);
+                string csv = string.Empty;
+                if (File.Exists(filePath))
+                {
+                    var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                    using (var reader = new StreamReader(stream))
+                    {
+                        while (!reader.EndOfStream)
+                        {
+                            csv = reader.ReadToEnd();
+                        }
+                    }
+                }
                 string[] rawMatrix = Regex.Split(csv, "\n(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
                 foreach (string line in rawMatrix)
                 {

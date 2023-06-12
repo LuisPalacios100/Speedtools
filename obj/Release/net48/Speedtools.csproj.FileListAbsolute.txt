@@ -20,3 +20,4 @@ C:\Users\Luis Palacios\source\repos\Speedtools\Speedtools\obj\Release\net48\Spee
 C:\Users\Luis Palacios\source\repos\Speedtools\Speedtools\obj\Release\net48\Speedtools.csproj.CoreCompileInputs.cache
 C:\Users\Luis Palacios\source\repos\Speedtools\Speedtools\obj\Release\net48\Speedtools.exe
 C:\Users\Luis Palacios\source\repos\Speedtools\Speedtools\obj\Release\net48\Speedtools.pdb
+C:\Users\Luis Palacios\source\repos\Speedtools\Speedtools\obj\Release\net48\Speedtools.csproj.AssemblyReference.cache

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -20,7 +21,18 @@ namespace Speedtools.BL
         {
             try
             {
-                string csv = System.IO.File.ReadAllText(filePath);
+                string csv = string.Empty;
+                if (File.Exists(filePath))
+                {
+                    var stream = new FileStream(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+                    using (var reader = new StreamReader(stream))
+                    {
+                        while (!reader.EndOfStream)
+                        {
+                            csv = reader.ReadToEnd();
+                        }
+                    }
+                }
                 string[] rawMatrix = Regex.Split(csv, "\n(?=(?:[^\"]*\"[^\"]*\")*(?![^\"]*\"))");
                 foreach (string line in rawMatrix)
                 {
