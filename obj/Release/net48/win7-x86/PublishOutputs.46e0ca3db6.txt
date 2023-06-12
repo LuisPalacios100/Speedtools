@@ -1,0 +1,3 @@
+C:\Users\Luis Palacios\source\repos\Speedtools\Speedtools\exe\Speedtools.exe
+C:\Users\Luis Palacios\source\repos\Speedtools\Speedtools\exe\Speedtools.exe.config
+C:\Users\Luis Palacios\source\repos\Speedtools\Speedtools\exe\Speedtools.pdb

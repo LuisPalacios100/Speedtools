@@ -1,0 +1,17 @@
+﻿<Window x:Class="Speedtools.BlurbSettings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Speedtools"
+        mc:Ignorable="d"
+        Title="BlurbSettings" Height="164" Width="400" ResizeMode="NoResize">
+    <Grid>
+        <TextBox x:Name="BlurbsLocationtxt" HorizontalAlignment="Left" Height="29" Margin="20,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="271"/>
+        <Label Content="Location of Blurbs File:" HorizontalAlignment="Left" Margin="15,4,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="BlurbSaveBtn" Content="Save" HorizontalAlignment="Left" Height="27" Margin="282,76,0,0" VerticalAlignment="Top" Width="82" Click="BlurbSaveBtn_Click"/>
+        <Button x:Name="BlurbCancelBtn" Content="Cancel" HorizontalAlignment="Left" Height="27" Margin="195,76,0,0" VerticalAlignment="Top" Width="82" Click="BlurbCancelBtn_Click"/>
+        <Button x:Name="BlurbTemplateBtn" Content="Get New Template" HorizontalAlignment="Left" Height="27" Margin="20,76,0,0" VerticalAlignment="Top" Width="115" Click="BlurbTemplateBtn_Click"/>
+        <Button x:Name="BlurbSearchBtn" Content="Search" HorizontalAlignment="Left" Height="27" Margin="296,36,0,0" VerticalAlignment="Top" Width="68" Click="BlurbSearchBtn_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,47 @@
+﻿<Window x:Class="Speedtools.Splash"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Speedtools"
+        mc:Ignorable="d"
+        Title="Welcome to Speedtools" Height="465" Width="650">
+    <Grid>
+        <CheckBox x:Name="chkSplashBool" Content="Do not show this screen again" HorizontalAlignment="Left" Margin="10,396,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOkSplash" Content="OK" HorizontalAlignment="Left" Margin="552,394,0,0" VerticalAlignment="Top" Width="70" Click="btnOkSplash_Click"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="373" Width="612">
+            Speedtools is an open source passion project designed to increase your efficiency in the office.<LineBreak/>
+            <LineBreak/>
+            Features include:
+            <LineBreak/>
+            <LineBreak/>
+            <BulletDecorator>
+                <BulletDecorator.Bullet>
+                    <Ellipse Height="5" Width="5" Fill="Black" Margin="5,0,0,0"/>
+                </BulletDecorator.Bullet>
+            </BulletDecorator>
+            Text Manipulator: A module designed to make quick modifications to your text. Conversions of lists, removal of blank characters, attachment or replacement of segments of text; among others, are some of the features found in this tab. Experiment with it to use it at its full potential. "CTRL+Z" or "CTRL+Y" work for Undo/Redo, but dedicated buttons are also present.
+            <LineBreak/>
+            <BulletDecorator>
+                <BulletDecorator.Bullet>
+                    <Ellipse Height="5" Width="5" Fill="Black" Margin="5,10,0,0"/>
+                </BulletDecorator.Bullet>
+            </BulletDecorator>
+            Link Opener: This module requires prior configuration of search engines via the "Settings" button. Provided a list (column, comma, or semicolon separated), Speedtools will open a new browser tab (based on your system's default browser) and open the URL selected; replacing the "%s" parameter with each value on the list. An optional "%t" parameter can also be specified in the URL, which will be filled with the current datetime. Please be careful with this module, as there's no limit to how many tabs can be opened at once, and might crash Speedtools or your computer. 
+            <LineBreak/>
+            <BulletDecorator>
+                <BulletDecorator.Bullet>
+                    <Ellipse Height="5" Width="5" Fill="Black" Margin="5,10,0,0"/>
+                </BulletDecorator.Bullet>
+            </BulletDecorator>
+            Blurbs: This module requires prior configuration of blurbs via the "Settings" button. The purpose of this module is to quickly copy and paste pre-written text. This can quickly help with replies which never vary or standardize responses across a team. Buttons will be automatically generated based on the blurb file. Columns 1 and 2 are to categorize blurbs, Column 3 is to name each blurbs, and Column 4 contains the text to be copied.
+            <LineBreak/>
+            <LineBreak/>
+            Note that Network filepaths are supported for both Links and Blurbs, but they may slow down Speedtools when opening.
+            <LineBreak/>
+            <LineBreak/>
+            For updates, visit and bookmark this project on <Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri="https://github.com/LuisPalacios100/Speedtools">GitHub</Hyperlink>
+        </TextBlock>
+
+    </Grid>
+</Window>

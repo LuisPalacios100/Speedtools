@@ -1,0 +1,2 @@
+C:\Users\Luis Palacios\source\repos\Speedtools\Speedtools\bin\Release\net6.0-windows\publish\win-x86\Speedtools.pdb
+C:\Users\Luis Palacios\source\repos\Speedtools\Speedtools\bin\Release\net6.0-windows\publish\win-x86\Speedtools.exe

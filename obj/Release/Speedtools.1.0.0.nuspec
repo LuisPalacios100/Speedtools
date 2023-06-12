@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Speedtools</id>
+    <version>1.0.0</version>
+    <authors>Speedtools</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net6.0-windows7.0" />
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net6.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WPF" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\Users\Luis Palacios\source\repos\Speedtools\Speedtools\bin\Release\net6.0-windows\Speedtools.runtimeconfig.json" target="lib\net6.0-windows7.0\Speedtools.runtimeconfig.json" />
+    <file src="C:\Users\Luis Palacios\source\repos\Speedtools\Speedtools\bin\Release\net6.0-windows\Speedtools.dll" target="lib\net6.0-windows7.0\Speedtools.dll" />
+  </files>
+</package>

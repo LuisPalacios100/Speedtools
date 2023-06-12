@@ -1,0 +1,109 @@
+﻿<Window x:Class="Speedtools.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Speedtools"
+        mc:Ignorable="d"
+        Title="Speedtools" Height="425" Width="355"
+        ResizeMode="CanMinimize">
+    <Grid Margin="0,0,0,0">
+        <TabControl x:Name="tabControl" HorizontalAlignment="Center" Height="385" VerticalAlignment="Top" Width="332">
+            <TabItem Header="Text Manipulator" Width="110">
+                <Grid Background="White">
+                    <TextBox x:Name="txtTextManipulatorInOut" HorizontalAlignment="Left" Height="200" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" VerticalScrollBarVisibility="Auto" AcceptsReturn="True"/>
+                    <Button x:Name="btnClearTextManipulator" Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Margin="274,188,0,0" Click="btnClearTextManipulator_Click"/>
+                    <TabControl HorizontalAlignment="Center" Height="109" Margin="0,215,0,0" VerticalAlignment="Top" Width="304">
+                        <TabItem Header="Convert" Width="60">
+                            <Grid>
+                                <ComboBox x:Name="cmbPreDelim" HorizontalAlignment="Left" Height="24" Margin="10,0,0,0" VerticalAlignment="Center" Width="85" SelectedIndex="0">
+                                    <ComboBoxItem Content="Column"/>
+                                    <ComboBoxItem Content="Comma"/>
+                                    <ComboBoxItem Content="Semicolon"/>
+                                </ComboBox>
+                                <Button x:Name="btnListConvert" Content="Convert" Margin="208,25,15,26" Click="btnListConvert_Click"/>
+                                <ComboBox x:Name="cmbPostDelim" HorizontalAlignment="Left" Height="24" VerticalAlignment="Center" Width="85" SelectedIndex="1" Margin="116,0,0,0">
+                                    <ComboBoxItem Content="Column"/>
+                                    <ComboBoxItem Content="Comma"/>
+                                    <ComboBoxItem Content="Semicolon"/>
+                                </ComboBox>
+                                <Label Content=">" Margin="96,26,182,31"/>
+                                <Button x:Name="btnFlip" Content="Flip" Margin="94,58,181,7" FontSize="9" Click="btnFlip_Click"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Blanks" Width="60">
+                            <Grid>
+                                <Button x:Name="btnNukeBlanks" Content="Nuke Blanks" Margin="38,25,154,25" Click="btnNukeBlanks_Click"/>
+                                <Button x:Name="btnTrimBlanks" Content="Trim Blanks" Margin="154,25,38,25" Click="btnTrimBlanks_Click"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Attacher" Width="60">
+                            <Grid>
+                                <TextBox x:Name="txtAttacher" TextWrapping="Wrap" Margin="99,31,99,31"/>
+                                <Button x:Name="btnPrepend" Content="Prepend" Margin="10,28,206,28" Click="btnPrepend_Click"/>
+                                <Button x:Name="btnAppend" Content="Append" Margin="206,28,10,28" Click="btnAppend_Click"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Replacer" Width="60">
+                            <Grid>
+                                <TextBox x:Name="txtPreReplace" TextWrapping="Wrap" Margin="16,38,212,21"/>
+                                <TextBox x:Name="txtPostReplace" TextWrapping="Wrap" Margin="111,38,117,21"/>
+                                <Label Content="Replace" Margin="24,14,220,40"/>
+                                <Label Content="With" Margin="127,14,134,39"/>
+                                <Label Content=">" Margin="90,35,191,18"/>
+                                <Button x:Name="btnReplace" Content="Replace" Margin="199,28,17,20" Click="btnReplace_Click"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Makeup" Width="60">
+                            <Grid>
+                                <Button x:Name="btnRemoveDuplicates" Content="Remove Duplicates" Margin="17,6,152,42" Click="btnRemoveDuplicates_Click"/>
+                                <Button x:Name="btnAlphabeticalOrder" Content="Alphabetical Order" Margin="152,6,17,42" Click="btnAlphabeticalOrder_Click"/>
+                                <Button x:Name="btnLower" Content="All Lowercase" Margin="17,44,152,5" Click="btnLower_Click"/>
+                                <Button x:Name="btnUpper" Content="All Uppercase" Margin="152,44,17,5" Click="btnUpper_Click"/>
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                    <Button x:Name="btnUndoTextManipulator" Content="Undo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Margin="12,188,0,0" Click="btnUndoTextManipulator_Click"/>
+                    <Button x:Name="btnRedoTextManipulator" Content="Redo" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Margin="54,188,0,0" Click="btnRedoTextManipulator_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Link Opener" Width="109">
+                <Grid Background="White">
+                    <TextBox x:Name="txtLinkOpener" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="200" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="306" AcceptsReturn="True" VerticalScrollBarVisibility="Auto"/>
+                    <ListBox x:Name="lbLinks" Margin="38,215,38,75" IsSynchronizedWithCurrentItem="True" ItemsSource="{Binding}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <RadioButton x:Name="rdiLinksDynamic" Content="{Binding content}" IsChecked="{Binding Path=IsSelected, RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}}" Checked="rdiLinksDynamic_Checked" Tag="{Binding tag}">
+                                </RadioButton>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Button x:Name="btnOpenLinks" Content="Open in Browser" HorizontalAlignment="Left" Height="33" Margin="91,287,0,0" VerticalAlignment="Top" Width="150" Click="btnOpenLinks_Click"/>
+                    <Button x:Name="btnClearLinkOpener" Content="Clear" HorizontalAlignment="Left" VerticalAlignment="Top" Width="40" Margin="274,188,0,0" Click="btnClearLinkOpener_Click"/>
+                    <Button x:Name="btnLinkSettings" Content="Settings" HorizontalAlignment="Left" Height="18
+                            " Margin="280,310,0,0" VerticalAlignment="Top" Width="40" FontSize="10" Click="btnLinkSettings_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Blurbs" Width="109">
+                <ScrollViewer HorizontalAlignment="Left" Width="326" VerticalScrollBarVisibility="Auto" HorizontalContentAlignment="Center">
+                    <Grid Background="White" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                        <ItemsControl x:Name="icBlurbs" Margin="0,45,0,25">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <Button x:Name="btnBlurbDynamic" Content="{Binding content}" Width="250" Height="40" Margin="2,2,2,2" Click="btnBlurbDynamic_Click" FontSize="14" FontWeight="Normal">
+                                    </Button>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                        <Label x:Name="lblBlurbs" Content="" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="54,6,10,0" Width="262" HorizontalContentAlignment="Right" FontSize="15" FontWeight="Bold"/>
+                        <Button x:Name="btnBlurbBack" Content="Back" HorizontalAlignment="Left" Height="21" Margin="5,10,0,0" VerticalAlignment="Top" Width="49" Click="btnBlurbBack_Click"/>
+                    </Grid>
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>
+        <StatusBar HorizontalAlignment="Center" Height="26" VerticalAlignment="Bottom" Width="340" Margin="2,0,2,2">
+            <Label x:Name="lblStatusBar" Content="" Height="20" Width="312" HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="8,1,0,0" ScrollViewer.CanContentScroll="True"/>
+        </StatusBar>
+        <CheckBox x:Name="chkOnTop" Content="" HorizontalAlignment="Right" Margin="0,0,3,7" VerticalAlignment="Bottom" Checked="chkOnTop_Checked" Unchecked="chkOnTop_Unchecked" ToolTip="Check to make Speedbar stay on top of all windows"/>
+    </Grid>
+</Window>

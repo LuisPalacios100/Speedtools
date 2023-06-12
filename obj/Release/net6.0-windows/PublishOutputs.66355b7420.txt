@@ -1,0 +1,5 @@
+C:\Users\Luis Palacios\source\repos\Speedtools\Speedtools\bin\Release\net6.0-windows\publish\Speedtools.exe
+C:\Users\Luis Palacios\source\repos\Speedtools\Speedtools\bin\Release\net6.0-windows\publish\Speedtools.dll
+C:\Users\Luis Palacios\source\repos\Speedtools\Speedtools\bin\Release\net6.0-windows\publish\Speedtools.deps.json
+C:\Users\Luis Palacios\source\repos\Speedtools\Speedtools\bin\Release\net6.0-windows\publish\Speedtools.runtimeconfig.json
+C:\Users\Luis Palacios\source\repos\Speedtools\Speedtools\bin\Release\net6.0-windows\publish\Speedtools.pdb
